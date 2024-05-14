@@ -1,4 +1,7 @@
+React.createElement("tagName",{Obj},"Content to be put in side h1");//-> syntax
+
 /*
+
 const heading = React.createElement(
     "h1",
     {id:"heading", xyz:"abc"},
