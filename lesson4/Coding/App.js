@@ -35,7 +35,8 @@ const Header = () => {
     )
 }
 
-const ResturantCards = () => {
+const ResturantCards = (props) => {
+    console.log(props);
     return (
         <div className="resturant-Card">
             <img 
@@ -43,8 +44,8 @@ const ResturantCards = () => {
                 alt="res-logo" 
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX1qE0S9a0rv_GfFBRS59c_iDR230yW6i5fQ&s."
             />
-            <h3>Meghna Foods</h3>
-            <h4>Biryani, North Indian, Asian</h4>
+            <h3>{props.resName}</h3>
+            <h4>{props.cuisine}</h4>
             <h4> 4.5 Stars </h4>
             <h4> 38 minuts</h4>
 
@@ -57,8 +58,14 @@ const Body = () => {
         <div className="body">
             <div className="Search">Search</div>
             <div className="resturant-Container">
-                <ResturantCards/>
-                <ResturantCards/>
+                <ResturantCards 
+                    resName="Meghna"
+                    cuisine="Biryani, North Indian, Asian"
+                />
+                <ResturantCards
+                    resName="KFC"
+                    cuisine="Burger, Continental"
+                />
                 <ResturantCards/>
                 <ResturantCards/>
                 <ResturantCards/>
