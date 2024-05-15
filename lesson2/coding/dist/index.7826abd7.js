@@ -2958,18 +2958,75 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 //React.createElement => Object => whenever we render it to the DOM it will become html element 
-const heading = /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {
-    id: "heading"
-}, "Hello world");
-const jsxHeading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-    children: "Hey from JSX"
+// const heading = React.createElement("h1",{id:"heading"},"Hello world");
+//JSX => babel transpile it to React.createElement => ReactElement -> JS Object => HTMLElement(render)
+/*
+const jsxHeading = (
+    <h1 className="head" tabIndex="5">
+        React using JSX
+    </h1>
+)
+*/ const number = 1000;
+//React element, so this behave like normal JS variable so we can put this inside {} of a component
+const title = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+    className: "head",
+    tabIndex: "5",
+    children: "This is title element."
 }, void 0, false, {
     fileName: "App.js",
-    lineNumber: 8,
-    columnNumber: 20
+    lineNumber: 21,
+    columnNumber: 5
 }, undefined);
+//react component
+const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        className: "head",
+        tabIndex: "5",
+        children: "This is title component"
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 29,
+        columnNumber: 5
+    }, undefined);
+_c = Title;
+const HeadingComponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        id: "container",
+        children: [
+            number,
+            " ",
+            title,
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "heading",
+                children: "Hey this is a Functional component"
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 39,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 35,
+        columnNumber: 5
+    }, undefined);
+_c1 = HeadingComponent;
+//
+// const title = (
+//     <h1 className="head" tabIndex="5">
+//         This is title element.
+//         <HeadingComponent/>
+//     </h1>
+// )
 const root = (0, _reactDomDefault.default).createRoot(document.getElementById("root"));
-root.render(jsxHeading); //root.render(heading);
+//root.render(jsxHeading);
+//root.render(heading);
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeadingComponent, {}, void 0, false, {
+    fileName: "App.js",
+    lineNumber: 55,
+    columnNumber: 13
+}, undefined));
+var _c, _c1;
+$RefreshReg$(_c, "Title");
+$RefreshReg$(_c1, "HeadingComponent");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {
