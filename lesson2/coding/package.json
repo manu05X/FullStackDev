@@ -1,0 +1,25 @@
+{
+  "name": "lesson1-react",
+  "version": "1.0.0",
+  "description": "Learning React-1",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "JS"
+  ],
+  "author": "Manish",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "@babel/core": "^7.17.0",
+    "@babel/preset-env": "^7.17.1",
+    "@babel/preset-react": "^7.16.7"
+  },
+  "dependencies": {
+    "react": "^18.3.1"
+  }
+}
