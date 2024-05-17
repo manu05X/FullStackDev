@@ -119,3 +119,8 @@
     font-weight: small; /* Lighter font weight */
     color: #999; /* Even lighter color for further de-emphasis */
 }
+
+.filter-btn {
+    margin: 10px;
+    cursor: pointer; /* make it clickable */
+}
