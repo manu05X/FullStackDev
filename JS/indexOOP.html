@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        //Prototype
+        //Example-1
+
+        // function Person(){
+        //     this.age = 25;
+        //     this.name = "John";
+        //     this.greet = () =>{
+        //         console.log("Hello ,I am ",this.name + "and I am ",this.age + "years old");
+        //     };
+        // }
+
+
+//using class Person
+        class AgedPerson{
+            printAge(){
+                console.log(this.age);
+            }
+        }
+
+        class Person extends AgedPerson{
+            name = 'John';
+
+            constructor(){
+                super(); // as we add base class constructor using super error message go away
+                this.age = 25;
+            }
+
+            greet(){
+                console.log("Hello ,I am ",this.name + "and I am ",this.age + "years old");
+            }
+        }
+
+
+
+        Person.prototype = {
+            printAge(){
+                console.log(this.age);
+            }
+        }
+
+        console.dir(Person);
+
+        const p = new Person();
+        p.greet();
+        p.printAge(); //this works as i have set the printAge property in prototype i.e in fallback object of the Person class
+        console.log(p.__proto__);
+        console.log(p.__proto__ === Person.prototype);
+        console.log(p.__proto__ === p.prototype);
+
+    </script> -->
+    
+</body>
+</html>
+

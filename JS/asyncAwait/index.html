@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button> Track Me </button>
+    <p>Promises are obj which 'wrap' (asynchronous) code to make working with it easier</p>
+    <script>
+        /*
+        const button = document.querySelector('button');
+        //const output = document.querySelector('p');
+
+
+        const setTimer = (duration) => {
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('Done...!');
+                }, duration)
+            });
+            return promise;
+        };
+
+        function trackUserHandler(){
+            navigator.geolocation.getCurrentPosition(
+            postionData => {
+                setTimer(2000).then(data =>{ //setTimer returns a promise and it accepts a duration i.e here 2000
+                    console.log(data,postionData);
+                });
+            }, error => {
+            console.log(error);
+           });
+
+           setTimeout(() => {
+            console.log('Timer done');
+           },0);
+
+           console.log('Getting Postion.....')
+        }
+
+        button.addEventListener('click', trackUserHandler);
+        */
+/*
+        // const button = document.querySelector('button');
+        // //const output = document.querySelector('p');
+
+
+        // const setTimer = (duration) => {
+        //     const promise = new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve('Done...!');
+        //         }, duration)
+        //     });
+        //     return promise;
+        // };
+
+        // function trackUserHandler(){
+        //     navigator.geolocation.getCurrentPosition(
+        //     postionData => {
+        //         setTimer(2000).then(data =>{ //setTimer returns a promise and it accepts a duration i.e here 2000
+        //             console.log(data,postionData);
+        //         });
+        //     }, error => {
+        //     console.log(error);
+        //    });
+
+        //    setTimer(1000).then(() => {
+        //     console.log('Timer Done...');
+        //    });
+
+        //    console.log('Getting Postion.....')
+        // }
+
+        // button.addEventListener('click', trackUserHandler);
+*/
+        /*
+        // Promise Chaning
+        const button = document.querySelector('button');
+        //const output = document.querySelector('p');
+
+        const getPosition = (opts) =>{
+            const promise = new Promise((resolve, reject) => {
+                navigator.geolocation.getCurrentPosition(success => {
+                    resolve(success);
+                }, error => {
+
+                }, opts);
+            });
+
+            return promise;
+        };
+
+        const setTimer = (duration) => {
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('Done...!');
+                }, duration)
+            });
+            return promise;
+        };
+
+        function trackUserHandler(){
+            let positionData;
+           getPosition()
+           .then(posData => {
+            positionData = posData;
+            return setTimer(2000);
+           })
+           .then(data => {
+            console.log(data,positionData);
+           });
+
+           setTimer(1000).then(() => {
+            console.log('Timer Done...');
+           });
+
+           console.log('Getting Postion.....')
+        }
+
+        button.addEventListener('click', trackUserHandler);
+        */
+/*
+         // Async Await can only be used with functions
+         const button = document.querySelector('button');
+        //const output = document.querySelector('p');
+
+        const getPosition = (opts) =>{
+            const promise = new Promise((resolve, reject) => {
+                navigator.geolocation.getCurrentPosition(success => {
+                    resolve(success);
+                }, error => {
+                    reject(error);
+                }, opts);
+            });
+
+            return promise;
+        };
+
+        const setTimer = async (duration) => {
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('Done...!');
+                }, duration)
+            });
+            return promise;
+        };
+
+        async function trackUserHandler(){
+            //let positionData;
+           const posData = await getPosition();
+           const timerData = await setTimer(2000);
+
+           console.log(timerData,posData);
+
+        //    .then(posData => {
+        //     positionData = posData;
+        //     return setTimer(2000);
+        //    })
+        //    .catch(err =>{
+        //     console.log(err); 
+        //     return "On we Go...";
+        //    })
+        //    .then(data => {
+        //     console.log(data,positionData);
+        //    });
+
+        //    setTimer(1000).then(() => {
+        //     console.log('Timer Done...');
+        //    });
+
+        //    console.log('Getting Postion.....')
+        }
+
+        button.addEventListener('click', trackUserHandler);
+        */
+
+        // Async await errorHandler
+        const button = document.querySelector('button');
+        //const output = document.querySelector('p');
+
+        const getPosition = (opts) =>{
+            const promise = new Promise((resolve, reject) => {
+                navigator.geolocation.getCurrentPosition(success => {
+                    resolve(success);
+                }, error => {
+                    reject(error);
+                }, opts);
+            });
+
+            return promise;
+        };
+
+        const setTimer = async (duration) => {
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('Done...!');
+                }, duration)
+            });
+            return promise;
+        };
+
+        async function trackUserHandler(){
+            //let positionData;
+            let timerData;
+            let posData;
+            try{
+                posData = await getPosition();
+                timerData = await setTimer(2000);
+            } catch(error){
+                console.log(error);
+
+            }
+            console.log(timerData,posData);
+
+            setTimer(1000).then(() => {
+            console.log('Timer Done...');
+        });
+
+        console.log('Getting Postion.....')
+        }
+
+        button.addEventListener('click', trackUserHandler);
+
+    </script>
+</body>
+</html>
