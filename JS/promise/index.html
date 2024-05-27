@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button> Track Me </button>
+    <script>
+        /*
+        const button = document.querySelector('button');
+        //const output = document.querySelector('p');
+
+
+        const setTimer = (duration) => {
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('Done...!');
+                }, duration)
+            });
+            return promise;
+        };
+
+        function trackUserHandler(){
+            navigator.geolocation.getCurrentPosition(
+            postionData => {
+                setTimer(2000).then(data =>{ //setTimer returns a promise and it accepts a duration i.e here 2000
+                    console.log(data,postionData);
+                });
+            }, error => {
+            console.log(error);
+           });
+
+           setTimeout(() => {
+            console.log('Timer done');
+           },0);
+
+           console.log('Getting Postion.....')
+        }
+
+        button.addEventListener('click', trackUserHandler);
+        */
+/*
+        // const button = document.querySelector('button');
+        // //const output = document.querySelector('p');
+
+
+        // const setTimer = (duration) => {
+        //     const promise = new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve('Done...!');
+        //         }, duration)
+        //     });
+        //     return promise;
+        // };
+
+        // function trackUserHandler(){
+        //     navigator.geolocation.getCurrentPosition(
+        //     postionData => {
+        //         setTimer(2000).then(data =>{ //setTimer returns a promise and it accepts a duration i.e here 2000
+        //             console.log(data,postionData);
+        //         });
+        //     }, error => {
+        //     console.log(error);
+        //    });
+
+        //    setTimer(1000).then(() => {
+        //     console.log('Timer Done...');
+        //    });
+
+        //    console.log('Getting Postion.....')
+        // }
+
+        // button.addEventListener('click', trackUserHandler);
+*/
+        /*
+        // Promise Chaning
+        const button = document.querySelector('button');
+        //const output = document.querySelector('p');
+
+        const getPosition = (opts) =>{
+            const promise = new Promise((resolve, reject) => {
+                navigator.geolocation.getCurrentPosition(success => {
+                    resolve(success);
+                }, error => {
+
+                }, opts);
+            });
+
+            return promise;
+        };
+
+        const setTimer = (duration) => {
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('Done...!');
+                }, duration)
+            });
+            return promise;
+        };
+
+        function trackUserHandler(){
+            let positionData;
+           getPosition()
+           .then(posData => {
+            positionData = posData;
+            return setTimer(2000);
+           })
+           .then(data => {
+            console.log(data,positionData);
+           });
+
+           setTimer(1000).then(() => {
+            console.log('Timer Done...');
+           });
+
+           console.log('Getting Postion.....')
+        }
+
+        button.addEventListener('click', trackUserHandler);
+        */
+
+         // Promise Error Handling
+         const button = document.querySelector('button');
+        //const output = document.querySelector('p');
+
+        const getPosition = (opts) =>{
+            const promise = new Promise((resolve, reject) => {
+                navigator.geolocation.getCurrentPosition(success => {
+                    resolve(success);
+                }, error => { //error handling if promise is rejected
+                    reject(error);
+                }, opts);
+            });
+
+            return promise;
+        };
+
+        const setTimer = (duration) => {
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('Done...!');
+                }, duration)
+            });
+            return promise;
+        };
+
+        function trackUserHandler(){
+            let positionData;
+           getPosition()
+           .then()
+           .then(posData => {
+            positionData = posData;
+            return setTimer(2000);
+           })
+           .catch(err =>{
+            console.log(err); //logs the error of promise i.e .then before this catch and skipps any middle .then and log the error captured in catch 
+            //so again after this catch if any .then i.e promise is present its execution start, but their error is not catched her in middel for that we 
+            //have to write a catch block after that .then i.e promise.
+            return "On we Go";
+           })
+           .then(data => {
+            console.log(data,positionData);
+           });
+
+           setTimer(1000).then(() => {
+            console.log('Timer Done...');
+           });
+
+           console.log('Getting Postion.....')
+        }
+
+        button.addEventListener('click', trackUserHandler);
+
+    </script>
+</body>
+</html>

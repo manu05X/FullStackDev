@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button> Track Me </button>
+    <script>
+
+        console.log('Starting.....');
+
+        setTimeout(()=>{
+            console.log('Timer completed..!');
+        }, 10);
+
+        console.log('Code Finished.....');
+
+
+        /*
+        const button = document.querySelector('button');
+        const output = document.querySelector('p');
+
+        function trackUserHandler(){
+            console.log('Clicked!');
+        }
+
+        button.addEventListener('click', trackUserHandler);
+
+        let result = 0;
+        for(let i = 0; i <1000000; i++) {
+            result += result + i;
+        }
+
+        console.log(result);
+        */
+
+        /*
+        const button = document.querySelector('button');
+        const output = document.querySelector('p');
+
+        function trackUserHandler(){
+           navigator.geolocation.getCurrentPosition(postionData => {
+            console.log(postionData)
+           }, error => {
+            console.log(error);
+           });
+
+           setTimeout(() => {
+            console.log('Timer done');
+           },0);
+
+           console.log('Getting Postion.....')
+        }
+
+        button.addEventListener('click', trackUserHandler);
+        */
+        /*
+            Getting Postion.....
+            Timer done
+            GeolocationPosition {coords: GeolocationCoordinates, timestamp: 1716698739193}
+
+            order is this because the browser api's or inbuilt time taking api are sent as callback and register in the eventQueue after completion
+            then eventLoop checks if the current call Stack is empty or not if callStack is empty then this functions is sent in the current call Stack
+            and further execution begins here.
+
+            so 1> Getting Postion..... -> normal log
+            2> setTimeout => is a api call back with timeInterval 0-> and this is not excat 0 but minimum it might take longer than 0ms as it will serch if callStack is empty or not if not empty than it will take longer.
+            3> GeolocationPosition=> is also a api and will take more time than setTimeout so its register in eventQueue a bit late than setTime out
+        */
+
+        /*
+        JS is a single-threaded but offloads longer-taking task such as setTimeout, setInterval, GeolocationPosition ...etc to the browser which in turn uses multiple
+        threads, eventQueue and eventLoop to handle asynchronous execution.
+        */
+
+
+
+    </script>
+</body>
+</html>
