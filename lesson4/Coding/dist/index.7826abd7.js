@@ -27549,15 +27549,19 @@ const Body = ()=>{
         }
     };
     //console.log("Body Rendered Call");
-    if (listOfRestaurants.length === 0) //return <h1>Loading.......</h1>
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {
-        numCards: 10
+    // if(listOfRestaurants.length === 0) { 
+    //     //return <h1>Loading.......</h1>
+    //     return <Shimmer numCards={10}/>
+    //     // Render shimmer cards with a number based on the desired ratio to the number of actual cards
+    //     //return <Shimmer numCards={listOfRestaurants.length > 0 ? Math.ceil(listOfRestaurants.length * 0.5) : 4} />;
+    // }
+    return listOfRestaurants.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {
+        numCards: 12
     }, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 47,
-        columnNumber: 16
-    }, undefined);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        lineNumber: 53,
+        columnNumber: 9
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27572,12 +27576,12 @@ const Body = ()=>{
                     children: "Top Rated Resturant"
                 }, void 0, false, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 55,
+                    lineNumber: 57,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 54,
+                lineNumber: 56,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27586,18 +27590,18 @@ const Body = ()=>{
                         resData: restaurantData.info
                     }, index, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 70,
+                        lineNumber: 72,
                         columnNumber: 21
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 68,
+                lineNumber: 70,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 53,
+        lineNumber: 55,
         columnNumber: 9
     }, undefined);
 };

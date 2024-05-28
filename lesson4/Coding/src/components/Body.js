@@ -42,14 +42,16 @@ const Body = () => {
 
     //console.log("Body Rendered Call");
 
-    if(listOfRestaurants.length === 0) { 
-        //return <h1>Loading.......</h1>
-        return <Shimmer numCards={10}/>
-        // Render shimmer cards with a number based on the desired ratio to the number of actual cards
-        //return <Shimmer numCards={listOfRestaurants.length > 0 ? Math.ceil(listOfRestaurants.length * 0.5) : 4} />;
-    }
+    // if(listOfRestaurants.length === 0) { 
+    //     //return <h1>Loading.......</h1>
+    //     return <Shimmer numCards={10}/>
+    //     // Render shimmer cards with a number based on the desired ratio to the number of actual cards
+    //     //return <Shimmer numCards={listOfRestaurants.length > 0 ? Math.ceil(listOfRestaurants.length * 0.5) : 4} />;
+    // }
 
-    return (
+    return listOfRestaurants.length === 0 ? (
+        <Shimmer numCards={12}/>
+    ) : (
         <div className="body">
             <div className="filter">
                 <button 
