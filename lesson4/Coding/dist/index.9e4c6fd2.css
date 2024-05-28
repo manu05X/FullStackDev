@@ -1,26 +1,43 @@
 .header {
+  background-color: #f0f0f0;
   border: 1px solid #000;
+  border-radius: 8px;
   justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
   display: flex;
+  box-shadow: 0 2px 5px #0000001a;
 }
 
 .logo {
+  border-radius: 50%;
   width: 120px;
+  height: auto;
 }
 
 .nav-items {
-  padding: 0 20px;
+  font-size: 18px;
 }
 
 .nav-items > ul {
-  font-size: 24px;
+  margin: 0;
+  padding: 0;
   list-style-type: none;
   display: flex;
 }
 
 .nav-items > ul > li {
-  margin: 10px;
-  padding: 10px;
+  margin-right: 20px;
+}
+
+.nav-items > ul > li.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.nav-items > ul > li:hover {
+  cursor: pointer;
+  color: #007bff;
 }
 
 .resturant-Container {
@@ -29,23 +46,60 @@
 }
 
 .resturant-Card {
-  background-color: gray;
+  background-color: #f0f0f0;
+  border-radius: 16px;
   width: 200px;
-  height: 300px;
-  margin: 5px;
+  height: auto;
+  margin: 10px;
   padding: 5px;
+  transition: transform .2s;
+  overflow: hidden;
+  box-shadow: 0 4px 8px #0000001a;
 }
 
 .resturant-Card:hover {
   cursor: pointer;
-  border: 1px solid #000;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px #0003;
 }
 
-.Search {
-  padding: 10px;
+.img-div {
+  border-radius: 16px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
 }
 
 .res-logo {
+  object-fit: cover;
+  border-radius: 16px;
   width: 100%;
+  height: auto;
+}
+
+.res-text {
+  padding: 5px;
+}
+
+.res-text h3, .res-text h4 {
+  color: #666;
+  margin: 5px 0;
+  font-family: Arial, sans-serif;
+}
+
+.res-text h3 {
+  font-size: 16px;
+  font-weight: small;
+}
+
+.res-text h4 {
+  font-size: 2px;
+  font-weight: small;
+  color: #999;
+}
+
+.filter-btn {
+  cursor: pointer;
+  margin: 10px;
 }
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

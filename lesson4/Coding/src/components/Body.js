@@ -39,7 +39,11 @@ const Body = () => {
         }
     };
 
-    console.log("Body Rendered Call");
+    //console.log("Body Rendered Call");
+
+    if(listOfRestaurants.length === 0) { 
+        return <h1>Loading.......</h1>
+    }
 
     return (
         <div className="body">
