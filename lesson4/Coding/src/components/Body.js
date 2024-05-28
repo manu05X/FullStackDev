@@ -1,6 +1,7 @@
 import ResturantCards from "./ResturantCards";
 import { restaurantList } from "../utils/mockData";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 
 const Body = () => {
@@ -39,9 +40,18 @@ const Body = () => {
         }
     };
 
-    console.log("Body Rendered Call");
+    //console.log("Body Rendered Call");
 
-    return (
+    // if(listOfRestaurants.length === 0) { 
+    //     //return <h1>Loading.......</h1>
+    //     return <Shimmer numCards={10}/>
+    //     // Render shimmer cards with a number based on the desired ratio to the number of actual cards
+    //     //return <Shimmer numCards={listOfRestaurants.length > 0 ? Math.ceil(listOfRestaurants.length * 0.5) : 4} />;
+    // }
+
+    return listOfRestaurants.length === 0 ? (
+        <Shimmer numCards={12}/>
+    ) : (
         <div className="body">
             <div className="filter">
                 <button 
