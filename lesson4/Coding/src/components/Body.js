@@ -1,6 +1,7 @@
 import ResturantCards from "./ResturantCards";
 import { restaurantList } from "../utils/mockData";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 
 const Body = () => {
@@ -42,7 +43,8 @@ const Body = () => {
     //console.log("Body Rendered Call");
 
     if(listOfRestaurants.length === 0) { 
-        return <h1>Loading.......</h1>
+        //return <h1>Loading.......</h1>
+        return <Shimmer/>
     }
 
     return (
