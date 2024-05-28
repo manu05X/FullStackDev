@@ -27550,7 +27550,9 @@ const Body = ()=>{
     };
     //console.log("Body Rendered Call");
     if (listOfRestaurants.length === 0) //return <h1>Loading.......</h1>
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {
+        numCards: 10
+    }, void 0, false, {
         fileName: "src/components/Body.js",
         lineNumber: 47,
         columnNumber: 16
@@ -27570,12 +27572,12 @@ const Body = ()=>{
                     children: "Top Rated Resturant"
                 }, void 0, false, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 53,
+                    lineNumber: 55,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 52,
+                lineNumber: 54,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27584,18 +27586,18 @@ const Body = ()=>{
                         resData: restaurantData.info
                     }, index, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 68,
+                        lineNumber: 70,
                         columnNumber: 21
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 66,
+                lineNumber: 68,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 51,
+        lineNumber: 53,
         columnNumber: 9
     }, undefined);
 };
@@ -29238,49 +29240,43 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$0b04.prelude(module);
 
 try {
+// const Shimmer = () => {
+//     return <div className="shimmer-container">
+//         <div className="shimmer-card">Cards</div>
+//         <div className="shimmer-card">Cards</div>
+//         <div className="shimmer-card">Cards</div>
+//         <div className="shimmer-card">Cards</div>
+//     </div>
+// };
+// export default Shimmer;
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Shimmer = ()=>{
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Shimmer = ({ numCards })=>{
+    const shimmerCards = [];
+    // Generate shimmer cards based on the specified number
+    for(let i = 0; i < numCards; i++)shimmerCards.push(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "shimmer-card",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "shimmer"
+        }, void 0, false, {
+            fileName: "src/components/Shimmer.js",
+            lineNumber: 22,
+            columnNumber: 17
+        }, undefined)
+    }, i, false, {
+        fileName: "src/components/Shimmer.js",
+        lineNumber: 21,
+        columnNumber: 13
+    }, undefined));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "shimmer-container",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: "Cards"
-            }, void 0, false, {
-                fileName: "src/components/Shimmer.js",
-                lineNumber: 3,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: "Cards"
-            }, void 0, false, {
-                fileName: "src/components/Shimmer.js",
-                lineNumber: 4,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: "Cards"
-            }, void 0, false, {
-                fileName: "src/components/Shimmer.js",
-                lineNumber: 5,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: "Cards"
-            }, void 0, false, {
-                fileName: "src/components/Shimmer.js",
-                lineNumber: 6,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true, {
+        children: shimmerCards
+    }, void 0, false, {
         fileName: "src/components/Shimmer.js",
-        lineNumber: 2,
+        lineNumber: 27,
         columnNumber: 12
     }, undefined);
 };
@@ -29294,6 +29290,6 @@ $RefreshReg$(_c, "Shimmer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["APLPM","1xC6H","2Ew96"], "2Ew96", "parcelRequire11e5")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}]},["APLPM","1xC6H","2Ew96"], "2Ew96", "parcelRequire11e5")
 
 //# sourceMappingURL=index.7826abd7.js.map

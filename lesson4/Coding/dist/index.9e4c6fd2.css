@@ -103,18 +103,14 @@
   margin: 10px;
 }
 
-.shimmer-container {
-  flex-wrap: wrap;
-  display: flex;
-}
-
 .shimmer-card {
+  float: left;
   background-color: #f0f0f0;
   border-radius: 16px;
   width: 200px;
-  height: auto;
+  height: 250px;
   margin: 10px;
-  padding: 5px;
+  padding: 10px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 8px #0000001a;

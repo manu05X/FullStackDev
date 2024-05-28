@@ -44,7 +44,9 @@ const Body = () => {
 
     if(listOfRestaurants.length === 0) { 
         //return <h1>Loading.......</h1>
-        return <Shimmer/>
+        return <Shimmer numCards={10}/>
+        // Render shimmer cards with a number based on the desired ratio to the number of actual cards
+        //return <Shimmer numCards={listOfRestaurants.length > 0 ? Math.ceil(listOfRestaurants.length * 0.5) : 4} />;
     }
 
     return (
