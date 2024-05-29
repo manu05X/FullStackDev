@@ -27546,7 +27546,7 @@ const Body = ()=>{
     const [listOfRestaurants, setListOfResturants] = (0, _react.useState)([]);
     //Normal Js Variable
     //let listOfRestaurants;
-    //console.log(listOfRestaurants);
+    console.log(listOfRestaurants);
     //Search text for restaurant
     const [searchText, setSearchText] = (0, _react.useState)("");
     (0, _react.useEffect)(()=>{
@@ -27571,6 +27571,7 @@ const Body = ()=>{
             console.error("Failed to fetch data:", error);
         }
     };
+    //Whenever state variables are updated, React triggers a reconciliation cycle(i.e re-renders the component)
     console.log("Body Rendered Call");
     // if(listOfRestaurants.length === 0) { 
     //     //return <h1>Loading.......</h1>
@@ -27582,7 +27583,7 @@ const Body = ()=>{
         numCards: 12
     }, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 57,
+        lineNumber: 58,
         columnNumber: 9
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
@@ -27602,25 +27603,28 @@ const Body = ()=>{
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 62,
+                                lineNumber: 63,
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                 onClick: ()=>{
                                     //Filter the restaurants cards and update the UI accordingly
                                     //serchText
-                                    console.log(searchText);
+                                    //console.log(searchText);
+                                    const filteredListSearchText = listOfRestaurants.filter((restaurants)=>restaurants.info.name.toLowerCase().includes(searchText));
+                                    //console.log(filteredListSearchText);
+                                    setListOfResturants(filteredListSearchText);
                                 },
                                 children: "Search"
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 69,
+                                lineNumber: 70,
                                 columnNumber: 21
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 61,
+                        lineNumber: 62,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27633,13 +27637,13 @@ const Body = ()=>{
                         children: "Top Rated Resturant"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 75,
+                        lineNumber: 81,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 60,
+                lineNumber: 61,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27648,18 +27652,18 @@ const Body = ()=>{
                         resData: restaurantData.info
                     }, index, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 90,
+                        lineNumber: 96,
                         columnNumber: 21
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 88,
+                lineNumber: 94,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 59,
+        lineNumber: 60,
         columnNumber: 9
     }, undefined);
 };

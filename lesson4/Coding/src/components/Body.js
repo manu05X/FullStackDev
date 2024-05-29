@@ -11,7 +11,7 @@ const Body = () => {
     const [listOfRestaurants, setListOfResturants] = useState([]);
     //Normal Js Variable
     //let listOfRestaurants;
-    //console.log(listOfRestaurants);
+    console.log(listOfRestaurants);
 
 
 
@@ -44,6 +44,7 @@ const Body = () => {
         }
     };
 
+    //Whenever state variables are updated, React triggers a reconciliation cycle(i.e re-renders the component)
     console.log("Body Rendered Call");
 
     // if(listOfRestaurants.length === 0) { 
@@ -63,13 +64,18 @@ const Body = () => {
                     type="text" 
                     className="search-box" 
                     value={searchText}
-                     onChange={(e)=>{
+                    onChange={(e)=>{
                         setSearchText(e.target.value);
-                     }}/>
+                    }}/>
                     <button onClick={()=>{
                         //Filter the restaurants cards and update the UI accordingly
                         //serchText
-                        console.log(searchText);
+                        //console.log(searchText);
+                        const filteredListSearchText = listOfRestaurants.filter(
+                            (restaurants) => restaurants.info.name.toLowerCase().includes(searchText)
+                        );
+                        //console.log(filteredListSearchText);
+                        setListOfResturants(filteredListSearchText);
                     }}>Search</button>
                 </div>
                 <button 
