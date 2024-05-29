@@ -14,6 +14,10 @@ const Body = () => {
     //console.log(listOfRestaurants);
 
 
+
+    //Search text for restaurant
+    const [searchText, setSearchText] = useState("");
+
     useEffect(() => {
         console.log("useEffect Called");
         fetchData();
@@ -40,7 +44,7 @@ const Body = () => {
         }
     };
 
-    //console.log("Body Rendered Call");
+    console.log("Body Rendered Call");
 
     // if(listOfRestaurants.length === 0) { 
     //     //return <h1>Loading.......</h1>
@@ -54,6 +58,20 @@ const Body = () => {
     ) : (
         <div className="body">
             <div className="filter">
+                <div className="search">
+                    <input 
+                    type="text" 
+                    className="search-box" 
+                    value={searchText}
+                     onChange={(e)=>{
+                        setSearchText(e.target.value);
+                     }}/>
+                    <button onClick={()=>{
+                        //Filter the restaurants cards and update the UI accordingly
+                        //serchText
+                        console.log(searchText);
+                    }}>Search</button>
+                </div>
                 <button 
                     className="filter-btn" 
                     onClick={()=>{
