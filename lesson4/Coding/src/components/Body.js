@@ -11,7 +11,10 @@ const Body = () => {
     const [listOfRestaurants, setListOfResturants] = useState([]);
     //Normal Js Variable
     //let listOfRestaurants;
-    console.log(listOfRestaurants);
+    //console.log(listOfRestaurants);
+
+    //for FilterRestaurants
+    const [filteredResturant, setFilterRestaurants] = useState([]);
 
 
 
@@ -38,6 +41,7 @@ const Body = () => {
             const restaurants = json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants; 
             // Update the state with the fetched restaurant data
             setListOfResturants(restaurants);
+            setFilterRestaurants(restaurants);
         } catch (error) {
             // Log any errors that occur during the fetch operation
             console.error("Failed to fetch data:", error);
@@ -75,7 +79,8 @@ const Body = () => {
                             (restaurants) => restaurants.info.name.toLowerCase().includes(searchText)
                         );
                         //console.log(filteredListSearchText);
-                        setListOfResturants(filteredListSearchText);
+                        //setListOfResturants(filteredListSearchText);
+                        setFilterRestaurants(filteredListSearchText);
                     }}>Search</button>
                 </div>
                 <button 
@@ -85,14 +90,15 @@ const Body = () => {
                                 (res) => res.info.avgRating > 4.3
                             );
                             // console.log(listOfRestaurants);
-                            setListOfResturants(filteredListOfResturants);
+                            //setListOfResturants(filteredListOfResturants);
+                            setFilterRestaurants(filteredListOfResturants);
                         }}
                     >
                     Top Rated Resturant
                 </button>
             </div>
             <div className="resturant-Container">
-                {listOfRestaurants.map((restaurantData, index) => (
+                {filteredResturant.map((restaurantData, index) => (
                     <ResturantCards key={index} resData={restaurantData.info} />
                 ))}
             </div>

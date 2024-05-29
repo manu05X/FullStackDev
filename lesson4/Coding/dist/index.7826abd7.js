@@ -27546,7 +27546,9 @@ const Body = ()=>{
     const [listOfRestaurants, setListOfResturants] = (0, _react.useState)([]);
     //Normal Js Variable
     //let listOfRestaurants;
-    console.log(listOfRestaurants);
+    //console.log(listOfRestaurants);
+    //for FilterRestaurants
+    const [filteredResturant, setFilterRestaurants] = (0, _react.useState)([]);
     //Search text for restaurant
     const [searchText, setSearchText] = (0, _react.useState)("");
     (0, _react.useEffect)(()=>{
@@ -27566,6 +27568,7 @@ const Body = ()=>{
             const restaurants = json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
             // Update the state with the fetched restaurant data
             setListOfResturants(restaurants);
+            setFilterRestaurants(restaurants);
         } catch (error) {
             // Log any errors that occur during the fetch operation
             console.error("Failed to fetch data:", error);
@@ -27583,7 +27586,7 @@ const Body = ()=>{
         numCards: 12
     }, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 58,
+        lineNumber: 62,
         columnNumber: 9
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
@@ -27603,7 +27606,7 @@ const Body = ()=>{
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 63,
+                                lineNumber: 67,
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27613,18 +27616,19 @@ const Body = ()=>{
                                     //console.log(searchText);
                                     const filteredListSearchText = listOfRestaurants.filter((restaurants)=>restaurants.info.name.toLowerCase().includes(searchText));
                                     //console.log(filteredListSearchText);
-                                    setListOfResturants(filteredListSearchText);
+                                    //setListOfResturants(filteredListSearchText);
+                                    setFilterRestaurants(filteredListSearchText);
                                 },
                                 children: "Search"
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 70,
+                                lineNumber: 74,
                                 columnNumber: 21
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 62,
+                        lineNumber: 66,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27632,42 +27636,43 @@ const Body = ()=>{
                         onClick: ()=>{
                             const filteredListOfResturants = listOfRestaurants.filter((res)=>res.info.avgRating > 4.3);
                             // console.log(listOfRestaurants);
-                            setListOfResturants(filteredListOfResturants);
+                            //setListOfResturants(filteredListOfResturants);
+                            setFilterRestaurants(filteredListOfResturants);
                         },
                         children: "Top Rated Resturant"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 81,
+                        lineNumber: 86,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 61,
+                lineNumber: 65,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "resturant-Container",
-                children: listOfRestaurants.map((restaurantData, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantCardsDefault.default), {
+                children: filteredResturant.map((restaurantData, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantCardsDefault.default), {
                         resData: restaurantData.info
                     }, index, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 96,
+                        lineNumber: 102,
                         columnNumber: 21
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 94,
+                lineNumber: 100,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 60,
+        lineNumber: 64,
         columnNumber: 9
     }, undefined);
 };
-_s(Body, "4aXYT+Zf7rlmBsrp58Y5ROj5JsM=");
+_s(Body, "euqjZvwdglSqgAjCsJssO3tjxq0=");
 _c = Body;
 exports.default = Body;
 var _c;
