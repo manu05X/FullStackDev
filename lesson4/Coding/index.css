@@ -161,7 +161,26 @@
 }
 
 
-/* .login {
-    padding: 0 200px;
-    cursor: pointer; 
-} */
+/* Add some basic styles for the button */
+.login {
+    padding: 10px 20px; /* Padding for size */
+    font-size: 16px; /* Font size for readability */
+    background-color: #007bff; /* Primary blue background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Add hover effect */
+.login:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Add focus effect */
+.login:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25); /* Add a focus shadow */
+}

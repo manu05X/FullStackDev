@@ -19,16 +19,18 @@ const Header = () => {
                 <li>About Us</li>
                 <li>Contact Us</li>
                 <li>Cart</li>
-                <li className="login" onClick={() => {
+                <button 
+                    className="login" 
+                    onClick={() => {
                     // btnName = "Logout";
                     // console.log("Logout");
-                    setBtnNameReact("Logout"); //when btnNameReact is set to "Logout the full Header component is rendered again.
+                    btnNameReact === "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login"); //when btnNameReact is set to "Logout the full Header component is rendered again.
                     console.log(btnNameReact);
-                }}>{btnNameReact}</li>
+                }}>{btnNameReact}</button>
             </ul>
         </div>
         </div>
-    )
-}
+    );
+};
 
 export default Header;

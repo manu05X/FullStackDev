@@ -27302,12 +27302,12 @@ const Header = ()=>{
                             lineNumber: 21,
                             columnNumber: 17
                         }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                             className: "login",
                             onClick: ()=>{
                                 // btnName = "Logout";
                                 // console.log("Logout");
-                                setBtnNameReact("Logout"); //when btnNameReact is set to "Logout the full Header component is rendered again.
+                                btnNameReact === "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login"); //when btnNameReact is set to "Logout the full Header component is rendered again.
                                 console.log(btnNameReact);
                             },
                             children: btnNameReact
