@@ -1,5 +1,5 @@
 import { CONST_LOGO } from "../utils/constants";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
 
@@ -7,6 +7,14 @@ const Header = () => {
     const [btnNameReact, setBtnNameReact] = useState("Login"); //initial State of btnName
     console.log("Render Header...");
 
+    // //if no dependencies array then ==> useEffect is called on every render of header
+    // useEffect(() => {
+    //     console.log("Header rendered");
+    // });
+    //if dependencies array is empty = [] , then ==> useEffect is called only on inital render and just once when the component is render for the first time.
+    useEffect(() => {
+        console.log("Header rendered");
+    },[]);
 
     return (
         <div className="header">
