@@ -1,3 +1,4 @@
+//rafce => auto generate component boilerplate
 const Contact = () =>{
     return (
         <div>

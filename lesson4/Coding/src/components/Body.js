@@ -37,6 +37,7 @@ const Body = () => {
         }
     }, [isFetching]);
 
+    //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
     // Async function to fetch restaurant data from the API
     const fetchData = async () => {
         try {

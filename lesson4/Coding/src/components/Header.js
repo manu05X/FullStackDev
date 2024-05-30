@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CONST_LOGO } from "../utils/constants";
 import { useState, useEffect } from "react";
 
@@ -11,8 +12,12 @@ const Header = () => {
     // useEffect(() => {
     //     console.log("Header rendered");
     // });
-    //if dependencies array is empty = [] , then ==> useEffect is called only on inital render and just once when the component is render for the first time.
-    useEffect(() => {
+    // //if dependencies array is empty = [] , then ==> useEffect is called only on inital render and just once when the component is render for the first time.
+    // useEffect(() => {
+    //     console.log("Header rendered");
+    // },[]);
+    //if dependencies array have something , then ==> useEffect is called only when the dependencies array value changes
+    useEffect(() => { 
         console.log("Header rendered");
     },[]);
 
@@ -23,10 +28,19 @@ const Header = () => {
             </div>
             <div className="nav-items">
             <ul className="ul-text">
-                <li className="active">Home</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
-                <li>Cart</li>
+                <li className="active">
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/about">About Us</Link>
+                </li>
+                <li>
+                    <Link to="/contact">Contact Us</Link>
+                
+                </li>
+                <li>
+                    <Link to="/cart">Cart</Link>
+                </li>
                 <button 
                     className="login" 
                     onClick={() => {
