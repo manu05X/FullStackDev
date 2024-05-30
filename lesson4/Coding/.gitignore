@@ -1,3 +1,17 @@
 /node_modules
 /dist
 /.parcel-cache
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore parcel cache
+lesson4/Coding/.parcel-cache/
+
+# Ignore specific large file
+lesson4/Coding/.parcel-cache/data.mdb
+
+# Ignore other files or directories
+*.log
+*.tmp
+*.bak
