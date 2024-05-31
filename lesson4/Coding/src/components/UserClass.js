@@ -7,29 +7,57 @@ class UserClass extends React.Component {
     //define class constructor to recieve props with keyword super(props)
     constructor(props) {
         super(props);
-        //console.log("Child class constructor called " + this.props.name);
+        console.log("Child class constructor called " + this.props.name);
 
         //state variable
 
-        this.state = {};
+        this.state = {
+            userInfo:{
+                name: "Dummy User",
+                location: "Dummy Location",
+                avtar_url : "Dummy Avtar URL",
+            }
+        };
     }
 
     async componentDidMount() {
-        //console.log("Child ComponentDidMounted called " + this.props.name);
+        console.log("Child ComponentDidMounted called " + this.props.name);
         //API call
+        console.log("API is called");
         const data = await fetch("https://api.github.com/users/manu05X");
-        const json = data.json();
+        const json = await data.json();
+        console.log("API Data is received");
+        
+        //console.log(json);
 
-        console.log(json);
+        //update the state variable
+        console.log("API Data Set to State Variable");
+        this.setState({
+            userInfo:json,
+        });
+
+    }
+
+    componentDidUpdate(){
+        console.log("Child ComponentDidUpdate called at Last");
+    }
+
+    componentWillUnmount(){
+        console.log("Child ComponentWillUnmount called -> when this component is gone from the current page i.e when we change to new Page");
     }
 
     render() {
-        const {name, location} = this.props; //destructure
+        //const {name, location} = this.props; //destructure from the props
 
-        //console.log("Child class Render is called " + this.props.name);
+        const {name, location, avtar_url} = this.state.userInfo; //destructure from the state i.e API call
+
+        //debugger; // Adding debugger to see at first component is rendered with default data in state variable
+
+        console.log("Child class Render is called " + this.props.name);
 
         return(
             <div className="user-card">
+                <img src={avtar_url} />
                 <h2>Name : {name}</h2>
                 <h3>Location : {location}</h3>
                 <h4>Contact : @manish</h4>
@@ -121,5 +149,45 @@ AboutClass.js:11 AboutClass -> parent class Constructor called
         this takes time then the component is updated with the data and rerender happenes.
 
 
+
+
+   **** API Call Life cycle *****
+
+    ----- Mounting Component Cycle -----
+        - Component is mounted called
+            - Construct (Dummy data)
+            - Render (Dummy data)
+                <HTML with Dummy Data is shown in web page>
+        
+        - ComponentDidMount is called
+            - API called
+            - { this.setState } -> state is set with recieved data from API
+
+
+    ---- UPDATE Component Cycle ------
+            - After setState is called the setState calls -> Reneder() Again but state is haveing new data of API. Reneder(with API data)
+                <HTML with Updated Data(API Data) is loaded on to web page>
+            
+            - Now calls componentDidUpdate()
+
+
+Demmo of above Lifecycle Process 
+
+    ---Mounting Component---
+     Child class constructor called Akshay (class)
+        UserClass.js:53 Child class Render is called Akshay (class)
+        UserClass.js:24 Child ComponentDidMounted called Akshay (class)
+            UserClass.js:26 API is called
+            UserClass.js:29 API Data is received
+            UserClass.js:34 API Data Set to State Variable
+
+    ---- UPDATEING Component Cycle ------
+        UserClass.js:53 Child class Render is called Akshay (class)
+        UserClass.js:42 Child ComponentDidUpdate called at Last
+
+
+    ---- UnMounting the Component Cycle ------
+Child ComponentWillUnmount called -> when this component is gone from the current page i.e when we change to new Page.
+    }
 
 */
