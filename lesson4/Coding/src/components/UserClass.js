@@ -7,7 +7,7 @@ class UserClass extends React.Component {
     //define class constructor to recieve props with keyword super(props)
     constructor(props) {
         super(props);
-        //console.log(props);
+        console.log("Child class constructor called");
 
         //state variable
 
@@ -17,16 +17,20 @@ class UserClass extends React.Component {
         };
     }
 
+    componentDidMount() {
+        console.log("Child ComponentDidMounted called");
+    }
+
     render() {
         const {name, location} = this.props; //destructure
         const {count, count2} = this.state;
-        
 
+        console.log("Child class Render is called");
 
         return(
             <div className="user-card">
                 <h1> Count : {count}</h1>
-                <h2>Count2 : {count2}</h2>
+                {/* <h2>Count2 : {count2}</h2> */}
                 <button onClick={()=>{
                     this.setState({
                         count : this.state.count + 1,
@@ -52,4 +56,13 @@ export default UserClass;
 
 /*
 The use of super(props) within the constructor of a React class component significantly impacts the entire component lifecycle. It sets the stage for how the component will interact with its props throughout its lifecycle, from mounting to unmounting.
+
+
+Render Header...
+    AboutClass.js:11 AboutClass -> parent class Constructor called
+        AboutClass.js:15 AboutClass -> parent Rendeder Method is called
+        UserClass.js:10 Child class constructor called
+    UserClass.js:24 Child class Render is called
+Header.js:21 Header rendered
+
 */

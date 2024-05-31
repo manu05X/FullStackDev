@@ -7,6 +7,7 @@ import About from "./src/components/About";
 import Contact from "./src/components/Contact";
 import Error from "./src/components/Error";
 import ResturantMenu from "./src/components/ResturantMenu";
+import AboutClass from "./src/components/AboutClass";
 
 /**
  * Header
@@ -42,9 +43,13 @@ const appRouter = createBrowserRouter([
                 path: "/",
                 element: <Body/>
             },
+            // {
+            //     path: "/about",
+            //     element: <About/>,
+            // },
             {
                 path: "/about",
-                element: <About/>,
+                element: <AboutClass/>,
             },
             {
                 path: "/contact",
