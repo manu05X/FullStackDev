@@ -306,3 +306,36 @@ li {
     background-color: #fafafa;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
+
+
+/* User.css */
+.user-card {
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding around the content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a raised effect */
+    max-width: 300px; /* Maximum width for the card */
+    margin: 20px auto; /* Center the card with some margin */
+    text-align: center; /* Center-align text */
+    font-family: 'Arial', sans-serif; /* Set a font family */
+}
+
+.user-card h2 {
+    font-size: 24px; /* Increase font size for the name */
+    color: #333; /* Dark gray color for the text */
+    margin-bottom: 10px; /* Space below the name */
+}
+
+.user-card h3 {
+    font-size: 18px; /* Font size for the location */
+    color: #555; /* Medium gray color for the text */
+    margin-bottom: 8px; /* Space below the location */
+}
+
+.user-card h4 {
+    font-size: 16px; /* Font size for the contact */
+    color: #777; /* Lighter gray color for the text */
+    margin-bottom: 0; /* No space below the contact */
+}
